@@ -1,8 +1,6 @@
 
 
-def read_files(spark):
-  df = spark. \
-    read. \
-      format('json') .\
-        load("/Users/hmadhukar/Documents/Pyspark_load_json_pract/2022-01-03-1.json")
+def read_files(spark,load_file):
+  print("load file ",load_file)
+  df = spark.read.format('json').load(load_file)
   return df

@@ -8,5 +8,12 @@ def get_spark_session(env="Dev",appName="DataAnalytics"):
           appName(appName). \
             getOrCreate()
     return spark
+  if env == 'PROD':
+    spark = SparkSession. \
+      builder. \
+        master('yarn'). \
+          appName(appName). \
+            getOrCreate()
+    return spark
   return
           
